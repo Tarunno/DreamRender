@@ -1,6 +1,7 @@
 import {Routes, Route} from 'react-router-dom'
 import Header from "./components/Header";
 import IndexPage from "./pages/IndexPage";
+import GeneratePage from './pages/generatePage';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <div className="container">
         <Routes>
           <Route path='/' element={<IndexPage />}/>
+          <Route path='/generate' element={<GeneratePage />}/>
         </Routes>
       </div>
     </div>

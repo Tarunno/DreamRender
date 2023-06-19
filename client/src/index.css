@@ -19,20 +19,29 @@ body {
   margin: 0px;
   padding: 0px;
 }
-
+html{
+  @apply bg-[#1B1A1F];
+}
 .App{
   @apply text-[13px] bg-[#1B1A1F] text-white min-h-screen;
   font-family: 'Montserrat', sans-serif;
 }
-
 .container{
   @apply ml-[300px];
+}
+.transition{
+  @apply transition-all duration-200;
 }
 
 .hero{
   background: url('../public/bg1.png') center center/cover;
   height: fit-content;
   height: 400px;
+}
+
+.generate{
+  background: url('../public/bg1.png') center center/cover;
+  height: fit-content;
 }
 
 ::-webkit-scrollbar {
@@ -47,4 +56,51 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
+}
+
+input[type='range'] {
+  height: 20px;
+  -webkit-appearance: none;
+  width: 100%;
+  background-color: transparent;
+}
+input[type='range']:focus {
+  outline: none;
+}
+input[type='range']::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  background:#73C051;
+  border-radius: 5px;
+}
+input[type='range']::-webkit-slider-thumb {
+  box-shadow: 1px 2px 10px #111;
+  height: 20px;
+  width: 20px;
+  border-radius: 20px;
+  background: #FFFFFF;
+  border: 2px solid #73C051;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -8px;
+}
+input[type='range']:focus::-webkit-slider-runnable-track {
+  background:#73C051;
+}
+
+.extraImages::-webkit-scrollbar {
+  width: 0px;
+}
+
+.slidein{
+  animation: slide .4s ease-in-out;
+}
+@keyframes slide {
+  0%{
+    left: 100%;
+  }
+  100%{
+    left: 300px;
+  }
 }
