@@ -22,6 +22,7 @@ const GenerateImages = asyncHandler(async(req, res) => {
   data['prompt'] = prompt
   data['width'] = width
 
+  console.log(data);
   
   const response = await fetch('https://z.lexica.art/api/generator', {
     method: "POST",
@@ -34,7 +35,7 @@ const GenerateImages = asyncHandler(async(req, res) => {
   const result = await response.json()
   console.log('LEXICA RESPONSE (apature): ', result);
   
-  if(result['needsMembership']){
+  if(!result['images']){
     if(data['prompt'] == ''){
       data['prompt'] = 'Interstellar'
     }
